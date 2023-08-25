@@ -19,7 +19,7 @@ public class UserController {
     IUserService userService;
 
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity user) {
         try {
             UserEntity createdUser = userService.createUser(user);
@@ -29,7 +29,7 @@ public class UserController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/get-all")
     public ResponseEntity<List<UserEntity>> getAllUsers() {
         try {
             List<UserEntity> users = userService.getAllUsers();
@@ -39,7 +39,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("get/{userId}")
     public ResponseEntity<UserEntity> getUserById(@PathVariable Long userId) {
         try {
             Optional<UserEntity> user = userService.getUserById(userId);
@@ -49,7 +49,7 @@ public class UserController {
         }
     }
 
-    @PutMapping("/{userId}")
+    @PutMapping("/update/{userId}")
     public ResponseEntity<UserEntity> updateUser(@PathVariable Long userId, @RequestBody UserEntity newUser) {
         try {
             UserEntity updatedUser = userService.updateUser(userId, newUser);
@@ -62,7 +62,7 @@ public class UserController {
         }
     }
 
-    @DeleteMapping("/{userId}")
+    @DeleteMapping("/delete/{userId}")
     public ResponseEntity<HashMap<String, String>> deleteUser(@PathVariable Long userId) {
         try {
             HashMap<String, String> response = userService.deleteUser(userId);

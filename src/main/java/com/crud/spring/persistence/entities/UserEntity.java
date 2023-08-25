@@ -10,7 +10,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String surmane;
+    private String surname;
     private String email;
 
     public long getId() {
@@ -29,12 +29,12 @@ public class UserEntity {
         this.name = name;
     }
 
-    public String getSurmane() {
-        return surmane;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurmane(String surmane) {
-        this.surmane = surmane;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {

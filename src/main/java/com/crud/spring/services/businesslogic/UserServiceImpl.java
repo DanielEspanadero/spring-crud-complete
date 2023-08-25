@@ -55,7 +55,7 @@ public class UserServiceImpl implements IUserService {
             UserEntity existingUser = userRepository.findById(userId).orElse(null);
             if (existingUser != null) {
                 existingUser.setName(newUser.getName());
-                existingUser.setSurmane(newUser.getSurmane());
+                existingUser.setSurname(newUser.getSurname());
                 existingUser.setEmail(newUser.getEmail());
 
                 return userRepository.save(existingUser);
